@@ -247,24 +247,45 @@ p {
 @media print {
     body { 
         background: white !important;
-        overflow: visible !important;
-        height: auto !important;
+        margin: 0;
+        padding: 0;
     }
-    .container, .container-fluid {
+    
+    .container-fixes, .boxshadow {
         height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
         overflow: visible !important;
+        page-break-inside: auto;
     }
-    .area, .modal { 
+    
+    .area, .modal, .circles { 
         display: none !important; 
     }
+    
     .boxshadow { 
         box-shadow: none !important;
-        page-break-inside: avoid;
     }
-    .row {
-        page-break-inside: avoid;
-    }
+    
+    /* Remove any fixed heights */
     * {
         overflow: visible !important;
+        height: auto !important;
+        max-height: none !important;
+    }
+    
+    /* Keep images at reasonable size */
+    img {
+        max-width: 100%;
+        height: auto !important;
+    }
+    
+    /* Prevent orphaned content */
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+    
+    ul, ol {
+        page-break-inside: avoid;
     }
 }
