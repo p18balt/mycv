@@ -244,3 +244,27 @@ p {
   }
 
 }
+@media print {
+    body { 
+        background: white !important;
+        overflow: visible !important;
+        height: auto !important;
+    }
+    .container, .container-fluid {
+        height: auto !important;
+        overflow: visible !important;
+    }
+    .area, .modal { 
+        display: none !important; 
+    }
+    .boxshadow { 
+        box-shadow: none !important;
+        page-break-inside: avoid;
+    }
+    .row {
+        page-break-inside: avoid;
+    }
+    * {
+        overflow: visible !important;
+    }
+}
